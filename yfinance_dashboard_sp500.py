@@ -111,10 +111,10 @@ title_str = f"{tickers_companies_dict[ticker]}'s stock price"
 qf = cf.QuantFig(df, title=title_str, theme='pearl')  # Keep theme here
 
 # Specify colors for each indicator
-volume_color = 'rgba(255, 215, 0, 0.5)'  # Gold
-sma_color = 'rgba(0, 191, 255, 0.5)'      # Electric Blue
-bb_color = 'rgba(127, 255, 0, 0.5)'       # Chartreuse Green
-rsi_color = 'rgba(220, 20, 60, 0.5)'      # Crimson
+volume_color = 'rgb(255, 215, 0, 0.5)'  # Gold
+sma_color = 'rgb(0, 191, 255, 0.5)'      # Electric Blue
+bb_color = 'rgb(127, 255, 0, 0.5)'       # Chartreuse Green
+rsi_color = 'rgb(220, 20, 60, 0.5)'      # Crimson
 
 if volume_flag:
     qf.add_volume(color=volume_color)  # Add color here
