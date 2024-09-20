@@ -110,16 +110,16 @@ data_exp.download_button(
 title_str = f"{tickers_companies_dict[ticker]}'s stock price"
 qf = cf.QuantFig(df, title=title_str, theme='pearl')
 if volume_flag:
- qf.add_volume()
+ qf.add_volume(theme='pearl')
 if sma_flag:
- qf.add_sma(periods=sma_periods)
+ qf.add_sma(periods=sma_periods, theme='pearl')
 if bb_flag:
  qf.add_bollinger_bands(periods=bb_periods,
- boll_std=bb_std)
+ boll_std=bb_std, theme='pearl')
 if rsi_flag:
  qf.add_rsi(periods=rsi_periods,
  rsi_upper=rsi_upper,
  rsi_lower=rsi_lower,
- showbands=True)
+ showbands=True, theme='pearl')
 fig = qf.iplot(asFigure=True)
 st.plotly_chart(fig)
