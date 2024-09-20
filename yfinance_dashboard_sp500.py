@@ -108,7 +108,7 @@ data_exp.download_button(
 )
 
 title_str = f"{tickers_companies_dict[ticker]}'s stock price"
-qf = cf.QuantFig(df, title=title_str)
+qf = cf.QuantFig(df, title=title_str, theme='pearl')
 if volume_flag:
  qf.add_volume()
 if sma_flag:
