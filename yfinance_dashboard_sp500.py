@@ -108,18 +108,22 @@ data_exp.download_button(
 )
 
 title_str = f"{tickers_companies_dict[ticker]}'s stock price"
-qf = cf.QuantFig(df, title=title_str, theme='pearl')
+qf = cf.QuantFig(df, title=title_str, theme='pearl')  # Keep theme here
+
+# Specify colors for each indicator
+volume_color = 'rgba(255, 215, 0, 0.5)'  # Gold
+sma_color = 'rgba(0, 191, 255, 0.5)'      # Electric Blue
+bb_color = 'rgba(127, 255, 0, 0.5)'       # Chartreuse Green
+rsi_color = 'rgba(220, 20, 60, 0.5)'      # Crimson
+
 if volume_flag:
- qf.add_volume(theme='pearl')
+    qf.add_volume(color=volume_color)  # Add color here
 if sma_flag:
- qf.add_sma(periods=sma_periods, theme='pearl')
+    qf.add_sma(periods=sma_periods, color=sma_color)  # Add color here
 if bb_flag:
- qf.add_bollinger_bands(periods=bb_periods,
- boll_std=bb_std, theme='pearl')
+    qf.add_bollinger_bands(periods=bb_periods, boll_std=bb_std, color=bb_color)  # Add color here
 if rsi_flag:
- qf.add_rsi(periods=rsi_periods,
- rsi_upper=rsi_upper,
- rsi_lower=rsi_lower,
- showbands=True, theme='pearl')
+    qf.add_rsi(periods=rsi_periods, rsi_upper=rsi_upper, rsi_lower=rsi_lower, showbands=True, color=rsi_color)  # Add color here
+
 fig = qf.iplot(asFigure=True)
 st.plotly_chart(fig)
